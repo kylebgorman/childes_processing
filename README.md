@@ -35,10 +35,4 @@ A sample use of `childesparser.Parser` which generates the "child" side of a CHI
 brent\_cut.py
 =============
 
-This file contains a heavily-modified version of `chilesparser.Parser` and code to create downsampled inputs for forced alignment on the Brent corpus. Since this requires a tremendous amount of WAV files, the source files have been compressed to FLAC. This is probably best for tutorial purposes.
-
-overreg.py
-==========
-
-This file generates data files for an in-press study of overregularization errors by the author in collaboration with Charles Yang.
-
+This file contains a heavily-modified version of `chilesparser.Parser` and code to create downsampled inputs for forced alignment on the Brent corpus. 

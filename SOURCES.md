@@ -5,13 +5,18 @@
 From the US
 ===========
 
+* Bloom1970 (1;8-3;1)
 * Braunwald@ (1;5-7;0)
-* Brent*@ (0;8-2;2)
+* Brent*@ (0;8-2;2) [IDS only]
 * Brown*@ (1;6-5;2)
+* Clark (2;8-3;2)
 * Gleason^@ (2;1-5;2)
+* Kuczaj (2;4-5;0)
+* MacWhinney (0;6-8;0)
 * New England^@ (1;1-2;9)
 * Post@ (1;5-2;8) 
 * Providence*@ (0;11-4;0)
+* Sachs (1;8-4;9)
 * Snow@ (2;5-3;9)
 * Suppes@ (1;11-3;3)
 * Tardif@ (1;5-1;23)

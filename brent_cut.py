@@ -25,6 +25,7 @@
 
 from os import path
 from glob import iglob
+from time import sleep
 from lxml.etree import parse
 from string import whitespace
 from subprocess import Popen, check_call
@@ -114,6 +115,9 @@ class Parser(object):
                 sink = path.join(self.ao_prefix, '{}_{:04d}'.format(self.name, 
                                                                          cnt))
                 # call SoX
+                while len(threads) > 8:
+                    threads = [t for t in threads if t.poll() == None]
+                    sleep(.1)
                 threads.append(Popen(('sox', '-G', 
                                       self.ai, sink + '.' + self.ao_ext,
                                       'trim', str(start), str(duration),
@@ -121,15 +125,11 @@ class Parser(object):
                 cnt += 1
                 ## write out 
                 print >> open(sink + '.lab', 'w'), line.upper()
-        # wind up SoX processing, checking for problems
-        for thread in threads: 
-            if thread.wait() != 0: # which is the same as the return code
-                raise RuntimeError('Code {} returned'.format(thread.returncode))
 
 
 if __name__ == '__main__':
 
-    for xml in iglob('xml/*/*.xml'):
+    for xml in iglob('xml/*1/*.xml'):
         print xml
-        P = Parser(xml, 'flac', 'flac', 'clips', 'wav')
-        P.cutterances(_momID)
+        P = Parser(xml, 'wav', 'wav', 'clips', 'wav')
+        P.threaded_cutterances(_momID)
