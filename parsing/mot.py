@@ -4,6 +4,7 @@
 
 import gzip
 
+from os import path
 from re import match
 from sys import argv, stdout
 from collections import defaultdict
@@ -16,11 +17,20 @@ FIELDNAMES = ['Corpus', 'Utterance']
 
 ## helpers
 
+def mac(name):
+    """
+    Guh.
+    """
+    if name == 'Macwhinney':
+        return 'MacWhinney'
+    return name
+
 def rencode(my_dict, encoding='UTF-8'):
     """
     Convert string values to UTF-8 for writing out
     """
-    return {k: unicode(v).encode(encoding) for (k, v) in my_dict.items()}
+    return {k: unicode(v).encode(encoding) if hasattr(v, 'encode') else v
+                                           for (k, v) in my_dict.items()}
 
 def role_info(cr, role):
     """
@@ -50,7 +60,7 @@ if __name__ == '__main__':
         target_IDs = role_info(cr, 'Mother')
         # read and write
         for ID in target_IDs:
-            my_row = {'Corpus': cr.corpus}
+            my_row = {'Corpus': mac(cr.corpus.title())}
             for utterance in cr.iter_utterances(ID):
                 my_row['Utterance'] = utterance
                 sink.writerow(rencode(my_row))
