@@ -16,7 +16,7 @@ from childesreader import CHILDESReader
 ## globals
 DAYS_PER_MONTH = 365.25 / 12
 AGE_PARSER = r'P(\d+)Y(\d+)M?(\d*)D?'
-FIELDNAMES = ['Corpus', 'Filename', 'Name', 'CA', 'Sex', 'Utterance']
+FIELDNAMES = ['Corpus', 'Name', 'Filename', 'Sex', 'Utterance', 'CA']
 
 ## helpers
 
@@ -59,8 +59,8 @@ def parse_age(agestring):
     >>> parse_age('P3Y5M15D')
     3.45773
     """
-    if not agestring:
-        return float('nan')
+    if agestring is None:
+        return 'NA'
     (y, m, d) = match(AGE_PARSER, agestring).groups()
     y = int(y)
     m = int(m)

@@ -152,13 +152,14 @@ run_safe $CHI $SOURCE_DIR/US/Bloom70_Peter/*.$SOURCE_EXT   \
               $SOURCE_DIR/US/Feldman_Steven/*.$SOURCE_EXT  \
               $SOURCE_DIR/US/Kuczaj_Abe/*.$SOURCE_EXT      \
               $SOURCE_DIR/US/MacWhinney/*.$SOURCE_EXT      \
-              $SOURCE_DIR/US/Nelson_Emily/*.$SOURCE_EXT    \
-              $SOURCE_DIR/US/Peters_Seth/*.$SOURCE_EXT     \
               $SOURCE_DIR/US/Providence_*/*.$SOURCE_EXT    \
               $SOURCE_DIR/US/Sachs_Naomi/*.$SOURCE_EXT     \
               $SOURCE_DIR/US/Snow_Nathaniel/*.$SOURCE_EXT  \
               $SOURCE_DIR/US/Suppes_Nina/*.$SOURCE_EXT     \
               > $TARGET_DIR/US.$TARGET_EXT &
+              #FIXME
+              #$SOURCE_DIR/US/Nelson_Emily/*.$SOURCE_EXT    \
+              #$SOURCE_DIR/US/Peters_Seth/*.$SOURCE_EXT     \
 run_safe $CHI $SOURCE_DIR/UK/Cruttenden_*/*.$SOURCE_EXT \
               $SOURCE_DIR/UK/Lara/*.$SOURCE_EXT         \
               $SOURCE_DIR/UK/Manchester_*/*.$SOURCE_EXT \
@@ -174,8 +175,6 @@ run_safe $CHI $SOURCE_DIR/US/Bloom70_Peter/*.$SOURCE_EXT   \
               $SOURCE_DIR/US/Feldman_Steven/*.$SOURCE_EXT  \
               $SOURCE_DIR/US/Kuczaj_Abe/*.$SOURCE_EXT      \
               $SOURCE_DIR/US/MacWhinney/*.$SOURCE_EXT      \
-              $SOURCE_DIR/US/Nelson_Emily/*.$SOURCE_EXT    \
-              $SOURCE_DIR/US/Peters_Seth/*.$SOURCE_EXT     \
               $SOURCE_DIR/US/Providence_*/*.$SOURCE_EXT    \
               $SOURCE_DIR/US/Sachs_Naomi/*.$SOURCE_EXT     \
               $SOURCE_DIR/US/Snow_Nathaniel/*.$SOURCE_EXT  \
@@ -186,6 +185,8 @@ run_safe $CHI $SOURCE_DIR/US/Bloom70_Peter/*.$SOURCE_EXT   \
               $SOURCE_DIR/UK/Thomas/*.$SOURCE_EXT          \
               > $TARGET_DIR/UK-US.$TARGET_EXT &
               #FIXME
+              #$SOURCE_DIR/US/Nelson_Emily/*.$SOURCE_EXT    \
+              #$SOURCE_DIR/US/Peters_Seth/*.$SOURCE_EXT     \
               #$SOURCE_DIR/UK/Wells_*/*.$SOURCE_EXT         \
 wait
 echo "done."

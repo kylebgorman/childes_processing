@@ -95,7 +95,10 @@ class CHILDESReader(object):
                     yield word.text
             # child's word is wrapped in <g></g> tag
             elif word.tag == XSIgrammar:
-                yield word[0].text
+                word = word[0]
+                if word.get('type') == 'omission':
+                    continue
+                yield word.text
 
     def iter_utterances(self, ID):
         for utterance in self.f:
