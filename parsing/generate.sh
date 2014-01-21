@@ -22,6 +22,9 @@ run_safe() {
 echo -n "Processing individual children..."
 # US
 run_safe $CHI $SOURCE_DIR/US/Bloom70_Peter/*.$SOURCE_EXT > $TARGET_DIR/Peter.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Bloom73_Allison/*.$SOURCE_EXT > $TARGET_DIR/Allison.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Bohannon_Baxter/*.$SOURCE_EXT > $TARGET_DIR/Baxter.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Bohannon_Nathaniel/*.$SOURCE_EXT > $TARGET_DIR/NathanielB.$TARGET_EXT &
 run_safe $CHI $SOURCE_DIR/US/Braunwald_Laura/*.$SOURCE_EXT > $TARGET_DIR/Laura.$TARGET_EXT & 
 run_safe $CHI $SOURCE_DIR/US/Brown_Adam/*.$SOURCE_EXT > $TARGET_DIR/Adam.$TARGET_EXT &
 run_safe $CHI $SOURCE_DIR/US/Brown_Sarah/*.$SOURCE_EXT > $TARGET_DIR/Sarah.$TARGET_EXT &
@@ -49,6 +52,24 @@ run_safe $CHI $SOURCE_DIR/US/Clark_Shem/*.$SOURCE_EXT > $TARGET_DIR/Shem.$TARGET
 #run_safe $CHI $SOURCE_DIR/US/Davis_Willie/*.$SOURCE_EXT > $TARGET_DIR/Willie.$TARGET_EXT &
 run_safe $CHI $SOURCE_DIR/US/Demetras_Trevor/*.$SOURCE_EXT > $TARGET_DIR/Trevor.$TARGET_EXT &
 run_safe $CHI $SOURCE_DIR/US/Feldman_Steven/*.$SOURCE_EXT > $TARGET_DIR/Steven.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Hall_Anthony/*.$SOURCE_EXT > $TARGET_DIR/Anthony.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Hall_Bobby/*.$SOURCE_EXT > $TARGET_DIR/Bobby.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Hall_Brett/*.$SOURCE_EXT > $TARGET_DIR/Brett.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Hall_Chris/*.$SOURCE_EXT > $TARGET_DIR/Chris.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Hall_Dexter/*.$SOURCE_EXT > $TARGET_DIR/Dexter.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Hall_Gabriella/*.$SOURCE_EXT > $TARGET_DIR/Gabriella.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Hall_Joey/*.$SOURCE_EXT > $TARGET_DIR/Joey.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Hall_Julia/*.$SOURCE_EXT > $TARGET_DIR/Julia.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Hall_Kip/*.$SOURCE_EXT > $TARGET_DIR/Kip.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Hall_Matthew/*.$SOURCE_EXT > $TARGET_DIR/Matthew.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Hall_Mim/*.$SOURCE_EXT > $TARGET_DIR/Mim.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Hall_Tony/*.$SOURCE_EXT > $TARGET_DIR/Tony.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Hall_Tracy/*.$SOURCE_EXT > $TARGET_DIR/Tracy.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Hall_Von/*.$SOURCE_EXT > $TARGET_DIR/Von.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Hall_Zoe/*.$SOURCE_EXT > $TARGET_DIR/Zoe.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Higginson_April/*.$SOURCE_EXT > $TARGET_DIR/April.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Higginson_May/*.$SOURCE_EXT > $TARGET_DIR/May.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Higginson_June/*.$SOURCE_EXT > $TARGET_DIR/June.$TARGET_EXT &
 run_safe $CHI $SOURCE_DIR/US/Kuczaj_Abe/*.$SOURCE_EXT > $TARGET_DIR/Abe.$TARGET_EXT &
 run_safe $CHI $SOURCE_DIR/US/Nelson_Emily/*.$SOURCE_EXT > $TARGET_DIR/Emily.$TARGET_EXT &
 run_safe $CHI $SOURCE_DIR/US/Providence_Alex/*.$SOURCE_EXT > $TARGET_DIR/Alex.$TARGET_EXT &
@@ -59,7 +80,7 @@ run_safe $CHI $SOURCE_DIR/US/Providence_Violet/*.$SOURCE_EXT > $TARGET_DIR/Viole
 run_safe $CHI $SOURCE_DIR/US/Providence_William/*.$SOURCE_EXT > $TARGET_DIR/William.$TARGET_EXT &
 run_safe $CHI $SOURCE_DIR/US/Peters_Seth/*.$SOURCE_EXT > $TARGET_DIR/Seth.$TARGET_EXT &
 run_safe $CHI $SOURCE_DIR/US/Sachs_Naomi/*.$SOURCE_EXT > $TARGET_DIR/Naomi.$TARGET_EXT &
-run_safe $CHI $SOURCE_DIR/US/Snow_Nathaniel/*.$SOURCE_EXT > $TARGET_DIR/Nathaniel.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Snow_Nathaniel/*.$SOURCE_EXT > $TARGET_DIR/NathanielS.$TARGET_EXT &
 run_safe $CHI $SOURCE_DIR/US/Suppes_Nina/*.$SOURCE_EXT > $TARGET_DIR/Nina.$TARGET_EXT &
 # UK (less useful: Ella, Jane, Lucy)
 run_safe $CHI $SOURCE_DIR/UK/Cruttenden_Jane/*.$SOURCE_EXT > $TARGET_DIR/Jane.$TARGET_EXT &
@@ -80,6 +101,7 @@ run_safe $CHI $SOURCE_DIR/UK/Manchester_Ruth/*.$SOURCE_EXT > $TARGET_DIR/Ruth.$T
 run_safe $CHI $SOURCE_DIR/UK/Manchester_Warren/*.$SOURCE_EXT > $TARGET_DIR/Warren.$TARGET_EXT &
 run_safe $CHI $SOURCE_DIR/UK/Thomas/*.$SOURCE_EXT > $TARGET_DIR/Thomas.$TARGET_EXT &
 ##FIXME Wells?
+# Note that Wells has a Tony as does Hall
 #run_safe $CHI $SOURCE_DIR/UK/Wells_Abigail/*.$SOURCE_EXT > $TARGET_DIR/Abigail.$TARGET_EXT &
 #run_safe $CHI $SOURCE_DIR/UK/Wells_Benjamin/*.$SOURCE_EXT > $TARGET_DIR/Benjamin.$TARGET_EXT &
 #run_safe $CHI $SOURCE_DIR/UK/Wells_Betty/*.$SOURCE_EXT > $TARGET_DIR/Betty.$TARGET_EXT &
@@ -118,8 +140,11 @@ echo "done."
 echo -n "Processing whole corpora..."
 # US
 # FIXME Davis? Post?
+run_safe $CHI $SOURCE_DIR/US/Bohannon*/*.$SOURCE_EXT > $TARGET_DIR/Bohannon.$TARGET_EXT &
 run_safe $CHI $SOURCE_DIR/US/Brown_*/*.$SOURCE_EXT > $TARGET_DIR/Brown.$TARGET_EXT &
 run_safe $CHI $SOURCE_DIR/UK/Cruttenden_*/*.$SOURCE_EXT > $TARGET_DIR/Cruttenden.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Hall_*/*.$SOURCE_EXT > $TARGET_DIR/Hall.$TARGET_EXT &
+run_safe $CHI $SOURCE_DIR/US/Higginson*/*.$SOURCE_EXT > $TARGET_DIR/Higginson.$TARGET_EXT &
 # MacWhinney goofiness
 run_safe $CHI $SOURCE_DIR/US/MacWhinney/*.$SOURCE_EXT > $TARGET_DIR/MacWhinney.$TARGET_EXT &
 wait;
@@ -167,27 +192,7 @@ run_safe $CHI $SOURCE_DIR/UK/Cruttenden_*/*.$SOURCE_EXT \
               > $TARGET_DIR/UK.$TARGET_EXT & 
               #FIXME
               #$SOURCE_DIR/UK/Wells_*/*.$SOURCE_EXT      \
-run_safe $CHI $SOURCE_DIR/US/Bloom70_Peter/*.$SOURCE_EXT   \
-              $SOURCE_DIR/US/Braunwald_Laura/*.$SOURCE_EXT \
-              $SOURCE_DIR/US/Brown_*/*.$SOURCE_EXT         \
-              $SOURCE_DIR/US/Clark_Shem/*.$SOURCE_EXT      \
-              $SOURCE_DIR/US/Demetras_Trevor/*.$SOURCE_EXT \
-              $SOURCE_DIR/US/Feldman_Steven/*.$SOURCE_EXT  \
-              $SOURCE_DIR/US/Kuczaj_Abe/*.$SOURCE_EXT      \
-              $SOURCE_DIR/US/MacWhinney/*.$SOURCE_EXT      \
-              $SOURCE_DIR/US/Providence_*/*.$SOURCE_EXT    \
-              $SOURCE_DIR/US/Sachs_Naomi/*.$SOURCE_EXT     \
-              $SOURCE_DIR/US/Snow_Nathaniel/*.$SOURCE_EXT  \
-              $SOURCE_DIR/US/Suppes_Nina/*.$SOURCE_EXT     \
-              $SOURCE_DIR/UK/Cruttenden_*/*.$SOURCE_EXT    \
-              $SOURCE_DIR/UK/Lara/*.$SOURCE_EXT            \
-              $SOURCE_DIR/UK/Manchester_*/*.$SOURCE_EXT    \
-              $SOURCE_DIR/UK/Thomas/*.$SOURCE_EXT          \
-              > $TARGET_DIR/UK-US.$TARGET_EXT &
-              #FIXME
-              #$SOURCE_DIR/US/Nelson_Emily/*.$SOURCE_EXT    \
-              #$SOURCE_DIR/US/Peters_Seth/*.$SOURCE_EXT     \
-              #$SOURCE_DIR/UK/Wells_*/*.$SOURCE_EXT         \
+./generate-all.sh &
 wait
 echo "done."
 

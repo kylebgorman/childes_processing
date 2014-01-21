@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python -O
 #
 # Copyright (c) 2012-2013 Kyle Gorman <gormanky@ohsu.edu>
 #
@@ -25,7 +25,7 @@
 
 
 from re import match
-from lxml.etree import parse, XMLSyntaxError
+from lxml.etree import parse, XMLSchema, XMLParser, XMLSyntaxError
 
 
 ## globals
@@ -41,13 +41,16 @@ XSIword = XSI + 'w'
 # a blank line...
 BLANK = r'^\s*$'
 
+# initialize parser using Talkbank schema
+XSD = 'talkbank.xsd'
+PARSER = XMLParser(schema=XMLSchema(file=XSD))
 
 class CHILDESReader(object):
     """
     Object representing a single CHILDES transcript
 
-    >>> import gzip
-    >>> p = CHILDESReader(gzip.open('adam48.xml.gz', 'r'))
+    >>> from gzip import GzipFile
+    >>> p = CHILDESReader(GzipFile('adam48.xml.gz', 'r'))
 
     Traverse with self.iter_utterances(your_ID), like so:
 
@@ -70,7 +73,7 @@ class CHILDESReader(object):
 
     def __init__(self, f):
         # XML object
-        self.f = parse(f).getroot()
+        self.f = parse(f, PARSER).getroot()
         # corpus ID
         self.corpus = self.f.attrib['Corpus']
         # participant information
